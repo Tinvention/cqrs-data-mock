@@ -1,0 +1,36 @@
+{
+    "news": [
+        {
+            "timestamp": 1505520000000,
+            "event": "0c30a3af-725c-4906-b50e-2b2d52ff1f18",
+            "id": "15f8922c-ac3c-461e-bb01-4b24954f9f42",
+            "currency": "EUR",
+            "severity": "HIGH"
+        },
+        {
+            "timestamp": 1505520000000,
+            "event": "SUCCEDONO COSE",
+            "id": "b6755f64-b673-4002-9ed0-b53b5141b1b6",
+            "currency": "EUR",
+            "severity": "HIGH"
+        },
+        {
+            "timestamp": 1505520000000,
+            "event": "d319deaf-cd28-472a-97ea-447bf9dbbb4d",
+            "id": "b8cdf5d8-4025-43c0-947b-9457db1ba219",
+            "currency": "EUR",
+            "severity": "HIGH"
+        },
+        {
+            "timestamp": 1505520000000,
+            "event": "test",
+            "autoSquare": {
+                "preEvent": 30,
+                "autoSquareTime": 30
+            },
+            "id": "BAZZ",
+            "currency": "EUR",
+            "severity": "HIGH"
+        }
+    ]
+}

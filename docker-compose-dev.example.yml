@@ -1,0 +1,30 @@
+version: '2'
+services:
+
+  cqrs-mock-kafka:
+    container_name: cqrs-kafka
+    ports:
+     - "2181:2181"
+     - "9092:9092"
+    image: flozano/kafka:0.9        
+    environment:
+     # on windows systems, change with your own ip. On linux this address should work.
+     - ADVERTISED_HOST=172.17.0.1
+     - ADVERTISED_PORT=9092  
+
+# services with 'depends_on' cannot be extended       
+  mock:
+    container_name: cqrs-mock-data-generator
+    image: cqrs-mock-data-generator
+    environment:
+     - servers=cqrs-kafka:9092
+     - producer.sleep.ms=100
+     - main=SingleRunSampleProducer
+     # - main=InfiniteSampleProducer
+     - singlerun.numitems=1000
+    ports:
+     - "9000:9000"  
+    depends_on: 
+     - cqrs-mock-kafka 
+    #logging:
+    #  driver: none
