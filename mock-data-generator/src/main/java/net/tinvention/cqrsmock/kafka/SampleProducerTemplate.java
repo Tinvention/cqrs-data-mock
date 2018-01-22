@@ -15,8 +15,7 @@ import net.tinvention.cqrsmock.model.Sample;
 
 /**
  * Template method abstract class for all the different types of sample producers.<br>
- * Can be better generalized using generic types instead of Sample and MeasureId 
- * 
+ * Can be better generalized using generic types instead of Sample and MeasureId
  * @author mlegnani
  */
 @Service
@@ -27,6 +26,8 @@ public abstract class SampleProducerTemplate extends BaseProducer {
 
     Properties props = getProperties();
     props.put("value.serializer", StringSerializer.class.getName());
+    // props.put("security-protocol", "PLAINTEXTSASL");
+
     Producer<String, String> producer = new KafkaProducer<>(props);
     HashMap<MeasureId, Sample> lastSamplesMap = new HashMap<>();
 

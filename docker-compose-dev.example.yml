@@ -1,30 +1,69 @@
 version: '2'
 services:
-
-  cqrs-mock-kafka:
-    container_name: cqrs-kafka
+     
+  kafka11-mock:
+    build:
+       context: docker-kafka11
+    environment:
+# on windows systems, change with your own ip. On linux this address should work.
+     - ADVERTISED_HOST=172.17.0.1
     ports:
      - "2181:2181"
-     - "9092:9092"
-    image: flozano/kafka:0.9        
-    environment:
-     # on windows systems, change with your own ip. On linux this address should work.
-     - ADVERTISED_HOST=172.17.0.1
-     - ADVERTISED_PORT=9092  
-
-# services with 'depends_on' cannot be extended       
+     - "9092:9092"  
+     
+  # services with 'depends_on' cannot be extended       
   mock:
     container_name: cqrs-mock-data-generator
     image: cqrs-mock-data-generator
     environment:
-     - servers=cqrs-kafka:9092
+     - servers=kafka11-mock:9092
      - producer.sleep.ms=100
      - main=SingleRunSampleProducer
      # - main=InfiniteSampleProducer
-     - singlerun.numitems=1000
+     - singlerun.numitems=50
     ports:
      - "9000:9000"  
     depends_on: 
-     - cqrs-mock-kafka 
+     - kafka11-mock 
     #logging:
     #  driver: none
+    
+#kafka11-mock:
+#    image: rawmind/alpine-kafka:1.0.0-2
+#    hostname: kafka11-mock
+#    environment:
+#     KAFKA_EXT_IP : localhost
+#    ports:
+#     - "2181:2181"
+#     - "9092:9092"  
+
+#  exceed-kafka11:
+ #   image: alexsuch/kafka:0.11.0.0
+  #  hostname: localhost
+  #  environment:
+  #   MODE : "ZOOKEEPER_AND_KAFKA"
+  #  ports:
+  #   - "9092:9091"
+  #   - "2181:2181"
+  
+#    cqrs-mock-kafka:
+#    container_name: cqrs-kafka
+#    ports:
+#     - "2181:2181"
+#     - "9092:9092"
+#    image: flozano/kafka:0.9        
+#    environment:
+     # on windows systems, change with your own ip. On linux this address should work.
+#     - ADVERTISED_HOST=172.17.0.1
+#     - ADVERTISED_PORT=9092
+
+
+
+#  kafka11-mock:
+#    image: alexsuch/kafka:0.11.0.0
+#    hostname: kafka11-mock
+#    environment:
+#     MODE : "ZOOKEEPER_AND_KAFKA"
+#    ports:
+#     - "2181:2181"
+#     - "9092:9092" 

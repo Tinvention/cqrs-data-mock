@@ -1,4 +1,4 @@
-package net.tinvention.trademock.config;
+package net.tinvention.cqrsmock.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

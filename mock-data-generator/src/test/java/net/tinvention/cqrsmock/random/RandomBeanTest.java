@@ -1,11 +1,11 @@
-package net.tinvention.trademock.random;
+package net.tinvention.cqrsmock.random;
 
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import net.tinvention.trademock.model.TestBean;
-import net.tinvention.trademock.utils.BaseTest;
+import net.tinvention.cqrsmock.model.TestBean;
+import net.tinvention.cqrsmock.utils.BaseTest;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 

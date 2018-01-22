@@ -1,4 +1,4 @@
-package net.tinvention.trademock.random;
+package net.tinvention.cqrsmock.random;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import net.tinvention.cqrsmock.manager.RandomBase;
 import net.tinvention.cqrsmock.model.MeasureId;
-import net.tinvention.trademock.model.TestEnum;
-import net.tinvention.trademock.utils.BaseTest;
+import net.tinvention.cqrsmock.model.TestEnum;
+import net.tinvention.cqrsmock.utils.BaseTest;
 
 public class RandomBaseTest extends BaseTest {
 

@@ -8,11 +8,13 @@
 		</encoder>
 	</appender>
 	
-	<logger name="org.springframework" level="INFO" />	
+	<logger name="org.springframework" level="DEBUG" />	
 	
 	<!-- org.springframework.web -->
 	<logger name="org.springframework.http" level="INFO" />
 	<logger name="org.springframework.http.converter.json" level="INFO" />
+	
+<!-- 	<logger name="org.apache.kafka" level="TRACE" /> -->
 
 	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />

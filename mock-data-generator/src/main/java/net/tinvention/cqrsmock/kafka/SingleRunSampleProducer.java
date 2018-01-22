@@ -33,9 +33,9 @@ public class SingleRunSampleProducer extends SampleProducerTemplate {
   protected void generateData(Producer<String, String> producer, HashMap<MeasureId, Sample> lastSamplesMap) throws InterruptedException, JsonProcessingException {
     for (int count = 0; count < numitems; count++) {
       Sample model = randomSampleGenerator.generateSample(lastSamplesMap);
-      lastSamplesMap.put(model.getSource(), model);
-
-      producer.send(new ProducerRecord<String, String>(samplesTopic, "key", objectMapper.writeValueAsString(model)));
+      lastSamplesMap.put(model.getSource(), model);      
+      
+      producer.send(new ProducerRecord<>(samplesTopic, Integer.toString(count), objectMapper.writeValueAsString(model)));
 
       if (sleep > 0) {
         Thread.sleep(sleep);

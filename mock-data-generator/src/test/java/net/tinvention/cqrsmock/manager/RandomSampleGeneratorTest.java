@@ -1,4 +1,4 @@
-package net.tinvention.trademock.manager;
+package net.tinvention.cqrsmock.manager;
 
 import java.util.HashMap;
 
@@ -10,7 +10,7 @@ import org.junit.Assert;
 import net.tinvention.cqrsmock.manager.RandomSampleGenerator;
 import net.tinvention.cqrsmock.model.MeasureId;
 import net.tinvention.cqrsmock.model.Sample;
-import net.tinvention.trademock.utils.BaseTest;
+import net.tinvention.cqrsmock.utils.BaseTest;
 
 public class RandomSampleGeneratorTest extends BaseTest {
 

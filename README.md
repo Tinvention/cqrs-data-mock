@@ -18,6 +18,8 @@ A mock data generator: emulates the samples flow coming from an industrial plant
     > mvn clean package docker:build -Dmock.skip=false
 
 
+* > cd ..
+
 * from your shell run:
 
 	>	docker-compose -f docker-compose-dev.example.yml up

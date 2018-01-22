@@ -1,4 +1,4 @@
-package net.tinvention.trademock.utils;
+package net.tinvention.cqrsmock.utils;
 
 import org.junit.Assert;
 import org.junit.Test;

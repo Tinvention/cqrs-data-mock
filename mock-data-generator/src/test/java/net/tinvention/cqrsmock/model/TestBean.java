@@ -1,4 +1,4 @@
-package net.tinvention.trademock.model;
+package net.tinvention.cqrsmock.model;
 
 public class TestBean {
   
