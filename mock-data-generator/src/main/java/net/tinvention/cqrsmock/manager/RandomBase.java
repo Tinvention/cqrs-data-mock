@@ -74,6 +74,10 @@ public class RandomBase {
   public Boolean rBool() {
     return random.nextBoolean();
   }
+  
+  public Boolean rBool(double probTrue) {
+    return random.nextDouble() < probTrue;
+  }
 
   public Double rDouble() {
     return random.nextDouble();

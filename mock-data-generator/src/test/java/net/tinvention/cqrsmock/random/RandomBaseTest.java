@@ -1,6 +1,7 @@
 package net.tinvention.cqrsmock.random;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -48,6 +49,26 @@ public class RandomBaseTest extends BaseTest {
     long num = random.rLong(1);
     Assert.assertNotNull(num);
     Assert.assertTrue(num < 1);
+  }
+
+  @Test
+  @Ignore
+  public void RandomBoolWProb() throws Exception {
+    int totCount = 1000;
+    int countTrue = 0;
+    int countFalse = 0;
+    double trueProb = 0.1;
+    for (int i = 0; i < totCount; i++) {
+      if (random.rBool(trueProb)) {
+        countTrue++;
+      } else {
+        countFalse++;
+      }
+    }
+    Assert.assertEquals(totCount, countTrue + countFalse);
+    Assert.assertTrue(countTrue>0);
+    Assert.assertTrue(countFalse>0);
+    Assert.assertEquals(trueProb, (double)countTrue / countFalse, 0.05);
   }
 
 }

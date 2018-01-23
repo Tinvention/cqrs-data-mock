@@ -24,11 +24,15 @@ public class RandomSampleGenerator extends RandomBase {
     if (prevSample != null) {
       baseValue = prevSample.getValue();
     }
-
-    result.setValue(baseValue + rFloat() * (rBool() ? 1 : -1));
-    result.setTimestamp(new Date());
-    result.setSource(measureId);
-
-    return result;
+    
+    if (rBool(measureId.getProb())) {
+      result.setValue(baseValue + rFloat() * (rBool() ? 1 : -1));
+      result.setTimestamp(new Date());
+      result.setSource(measureId);
+  
+      return result;
+    }
+    // discard sample an generate another one
+    return generateSample(lastSamplesMap);
   }
 }

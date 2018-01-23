@@ -31,5 +31,4 @@ public class Sample {
   public void setValue(float value) {
     this.value = value;
   }
-
 }

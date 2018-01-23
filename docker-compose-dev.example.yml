@@ -18,8 +18,8 @@ services:
     environment:
      - servers=kafka11-mock:9092
      - producer.sleep.ms=100
-     - main=SingleRunSampleProducer
-     # - main=InfiniteSampleProducer
+     #- main=SingleRunSampleProducer
+     - main=InfiniteSampleProducer
      - singlerun.numitems=50
     ports:
      - "9000:9000"  
