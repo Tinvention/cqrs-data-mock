@@ -35,7 +35,21 @@ A mock data generator: emulates the samples flow coming from an industrial plant
 	"value":-11.500964
 }
 ```
- 
+### Test it
+You can connect to the topic with the standard CLI kafka consumer: download kafka_2.11-0.11.0.2.tgz and unzip it, then run (from the bin directory):
+
+`./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic cqrs-mock-plant -from-beginning`
+
+you should be able to see the messages flowing.
+```
+{"source":"TEMPERATURE_HDVAM78","timestamp":1516721388421,"value":36.78537}
+{"source":"TEMPERATURE_HDVAM78","timestamp":1516721388521,"value":36.505203}
+{"source":"TEMPERATURE_HDVAM78","timestamp":1516721388622,"value":37.034294}
+{"source":"IN_VOLTAGE","timestamp":1516721388722,"value":27.547136}
+{"source":"PRESSURE_KJYTD25ZAA","timestamp":1516721388822,"value":-26.187601}
+```
+
+
 ### Maven unit tests
      
 As usual...
